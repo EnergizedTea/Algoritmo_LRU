@@ -66,6 +66,3 @@ while len(fallos) != numPag:
         
     
    
-
-
-Aqui lo dejo por ahroa, en un rato o mañana antes de las 11 les paso el github
