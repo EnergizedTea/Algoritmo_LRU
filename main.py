@@ -10,8 +10,22 @@ def agregar(x):
         fallos.append(' ')
     if x == 1:
         fallos.append('X')
-        
+
+def actualizar_contadores():
+    for i in range(len(marcos)):
+        contador = "".join(str(x) for x in matriz[i])
+        contadores[i] = int(contador, 2)
+
+def ajuste_matriz(p):
+    pos = marcos.index(p)
+    matriz[pos, :] = 1
+    matriz[:, pos] = 0
+
+
 def imprimir(x=0):
+        ajuste_matriz(p)
+        actualizar_contadores()
+        
         print(f'Marcos: ', marcos)
         print(f'Matriz')
         for i in range(numMarcos):
@@ -50,23 +64,15 @@ print(paginas)
 for p in paginas:
     print(f"\n--- Procesando página {p} ---")
     if p in marcos:
-        pos = marcos.index(p)
-        matriz[pos, :] = 1
-        matriz[:, pos] = 0
-        
         imprimir(0)
     else:
         if len(marcos) < numMarcos:
             marcos.append(p)
-            pos = len(marcos) - 1
-            
-            matriz[pos, :] = 1
-            matriz[:, pos] = 0
             
             imprimir(0)
         else:
+            menor = min(contadores)
+            pos = contadores.index(menor)
+            marcos[pos] = p
 
-
-    
-    
-   
+            imprimir(1)
