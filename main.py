@@ -37,10 +37,10 @@ def imprimir(x=0):
         print(f'Fallos', fallos)
              
 print('ALGORITMO LRU PARA REEMPLAZO DE PÁGINAS\n')
-numMarcos=int(input('Numero de Marcos (minimo 3, maximo 4):'))
+numMarcos=int(input('Numero de Marcos (minimo 3, maximo 4): '))
 while numMarcos < 3 or numMarcos > 4:
     print("Valor invalido. Debe ser entre 3 y 4.")
-    numMarcos=int(input('Numero de Marcos (minimo 3, maximo 4):'))
+    numMarcos=int(input('Numero de Marcos (minimo 3, maximo 4): '))
     
 matriz = np.zeros((numMarcos, numMarcos), dtype=int)
 
