@@ -2,7 +2,7 @@ import numpy as np
 
 fallos = []
 paginas = []
-marcos=[1]
+marcos=[]
 contadores=[]
 
 def agregar(x):
@@ -50,14 +50,22 @@ print(paginas)
 for p in paginas:
     print(f"\n--- Procesando página {p} ---")
     if p in marcos:
-        """LRU"""
         pos = marcos.index(p)
         matriz[pos, :] = 1
         matriz[:, pos] = 0
         
-        imprimir(0) # 0 para indicar que no hay fallo
+        imprimir(0)
     else:
-        imprimir()
+        if len(marcos) < numMarcos:
+            marcos.append(p)
+            pos = len(marcos) - 1
+            
+            matriz[pos, :] = 1
+            matriz[:, pos] = 0
+            
+            imprimir(0)
+        else:
+
 
     
     
