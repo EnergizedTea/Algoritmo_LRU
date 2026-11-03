@@ -49,10 +49,10 @@ while i != numMarcos:
     contadores.append(0)
     i = i +1 
 
-numPag=int(input('Numero de Páginas (minimo 5, maximo 16):'))
+numPag=int(input('Numero de Páginas (minimo 5, maximo 16): '))
 while numPag < 5 or numPag > 16:
     print("Valor invalido. Debe ser entre 5 y 16.")
-    numPag=int(input('Numero de Páginas (minimo 5, maximo 16):'))
+    numPag=int(input('Numero de Páginas (minimo 5, maximo 16): '))
 
 
 print('Introduzca el flujo (la demanda) de páginas')
