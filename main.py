@@ -4,7 +4,6 @@ fallos = []
 paginas = []
 marcos=[]
 contadores=[]
-fallos=[]
 
 def agregar(x):
     if x == 0:
@@ -43,20 +42,18 @@ while numPag < 5 or numPag > 16:
 
 
 print('Introduzca el flujo (la demanda) de páginas')
-i = 0
-while i!= numPag:
-    x = int(input(f'Página {i+1}:'))
-    i = i + 1
+for i in range(numPag):
+    x = int(input(f'Página {i+1}: '))
     paginas.append(x)
 print(paginas)
 
-while len(fallos) != numPag:
-    for p in paginas:
-        if p in marcos:
-            """LRU"""
-            imprimir()
-        else:
-            imprimir()
+for p in paginas:
+    print(f"\n--- Procesando página {p} ---")
+    if p in marcos:
+        """LRU"""
+        imprimir()
+    else:
+        imprimir()
         
     
    
